@@ -18,13 +18,11 @@ stages {
     stage('Build Docker Image') {  
         steps {  
             // Build the Docker image  
-            dir(app){
              script {  
                 docker.build("${DOCKER_IMAGE}")  
                 }  
             }
-        }  
-    }  
+        }    
 
     stage('Push Docker Image') {  
         steps {  
