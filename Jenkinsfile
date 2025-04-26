@@ -18,9 +18,9 @@ stages {
     stage('Build Docker Image') {  
         steps {  
             // Build the Docker image  
-            script {  
-                docker.build("${DOCKER_IMAGE}")  
-            }  
+            dir(app){
+            bat "docker build -t ${DOCKER_IMAGE} ."
+            }
         }  
     }  
 
